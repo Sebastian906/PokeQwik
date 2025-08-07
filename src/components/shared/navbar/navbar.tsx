@@ -15,14 +15,6 @@ export default component$(() => {
                         <QwikLogo height={50} width={143} />
                     </a>
                 </div>
-                <ul>
-
-                    <li>
-                        <a href="https://qwik.builder.io/tutorial/welcome/overview/" target="_blank">
-                            Tutorials
-                        </a>
-                    </li>
-                </ul>
             </div>
         </header>
     );
