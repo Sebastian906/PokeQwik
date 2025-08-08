@@ -9,10 +9,14 @@ export default component$(() => {
     <>
       <span class="text-2xl">Buscador simple</span>
       <span class="text-9xl">{ pokemonId }</span>
-      {/** TODO crear imagen */}
+      <img 
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId.value}.png`} 
+        alt="Imagen de Pokemon" 
+        style={{ width: '200px' }}
+      />
       <div class="mt-2">
-        <button class="btn btn-primary mr-2">Anterior</button>
-        <button class="btn btn-primary">Siguiente</button>
+        <button onClick$={()=>pokemonId.value--} class="btn btn-primary mr-2">Anterior</button>
+        <button onClick$={()=>pokemonId.value++} class="btn btn-primary">Siguiente</button>
       </div>
     </>
   );
