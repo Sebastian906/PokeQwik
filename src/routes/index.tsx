@@ -1,5 +1,6 @@
 import { component$, useSignal, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { PokemonImage } from "~/components/pokemons/pokemon-image";
 
 export default component$(() => {
 
@@ -9,11 +10,7 @@ export default component$(() => {
     <>
       <span class="text-2xl">Buscador simple</span>
       <span class="text-9xl">{ pokemonId }</span>
-      <img 
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId.value}.png`} 
-        alt="Imagen de Pokemon" 
-        style={{ width: '200px' }}
-      />
+      <PokemonImage id={pokemonId.value} backImage/>
       <div class="mt-2">
         <button onClick$={()=>pokemonId.value--} class="btn btn-primary mr-2">Anterior</button>
         <button onClick$={()=>pokemonId.value++} class="btn btn-primary">Siguiente</button>
