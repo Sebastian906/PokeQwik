@@ -7,9 +7,13 @@ interface Props {
 }
 
 export const PokemonImage = component$(( {id, size = 200, backImage = false }: Props ) => {
+    let imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    if (backImage) {
+        imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`
+    }
     return (
         <img 
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} 
+            src={imageUrl} 
             alt="Imagen de Pokemon" 
             style={{ width: `${size}` }}
         />
